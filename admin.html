@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panneau d'Administration - MonWiki</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="index.html">MonWiki</a></h1>
+            </div>
+            <div class="theme-toggle">
+                <button id="themeToggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="admin-container">
+            <h2>Panneau d'Administration</h2>
+            
+            <!-- Formulaire de Connexion -->
+            <div class="login-form" id="loginForm">
+                <h3>Connexion</h3>
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" id="username" placeholder="Entrez votre nom d'utilisateur">
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" placeholder="Entrez votre mot de passe">
+                </div>
+                <button id="loginButton">Se Connecter</button>
+                <p id="loginError" style="color: red; margin-top: 1rem; display: none;">Nom d'utilisateur ou mot de passe invalide</p>
+            </div>
+            
+            <!-- Panneau d'Administration (caché par défaut) -->
+            <div class="admin-panel" id="adminPanel">
+                <div class="admin-tabs">
+                    <button class="tab-button active" data-tab="articles">Gérer les Articles</button>
+                    <button class="tab-button" data-tab="create">Créer un Article</button>
+                    <button id="logoutButton">Déconnexion</button>
+                </div>
+                
+                <!-- Onglet Articles -->
+                <div class="tab-content active" id="articlesTab">
+                    <h3>Gérer les Articles</h3>
+                    <div class="article-list" id="adminArticleList">
+                        <!-- Les articles seront chargés ici via JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Onglet Créer un Article -->
+                <div class="tab-content" id="createTab">
+                    <h3>Créer un Nouvel Article</h3>
+                    <form id="articleForm">
+                        <div class="form-group">
+                            <label for="articleTitle">Titre</label>
+                            <input type="text" id="articleTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleContent">Contenu</label>
+                            <textarea id="articleContent" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleImage">URL de l'Image</label>
+                            <input type="text" id="articleImage" value="https://via.placeholder.com/300x150">
+                        </div>
+                        <div class="form-group">
+                            <label for="articleCategory">Catégorie</label>
+                            <input type="text" id="articleCategory" placeholder="Ex: Technologie, Science, Histoire...">
+                        </div>
+                        <div class="form-group">
+                            <label for="articleInfobox">Contenu de l'Infobox (HTML)</label>
+                            <textarea id="articleInfobox" placeholder="<h4>Informations</h4><p><strong>Date:</strong> 2025</p>"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="articleFeatured">
+                                Article en Vedette
+                            </label>
+                        </div>
+                        <input type="hidden" id="articleId">
+                        <button type="submit" id="saveArticleButton">Enregistrer l'Article</button>
+                        <button type="button" id="cancelEditButton" style="background-color: #f44336; display: none;">Annuler la Modification</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 MonWiki - Votre Base de Connaissances Personnelle</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

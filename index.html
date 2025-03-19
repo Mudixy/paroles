@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonWiki - Votre Base de Connaissances Personnelle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="index.html">MonWiki</a></h1>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Rechercher des articles...">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            <div class="theme-toggle">
+                <button id="themeToggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="#" id="randomArticle"><i class="fas fa-random"></i> Article Aléatoire</a></li>
+                    <li><a href="#" id="recentChanges"><i class="fas fa-history"></i> Modifications Récentes</a></li>
+                    <li><a href="#" id="allArticles"><i class="fas fa-list"></i> Tous les Articles</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <section class="welcome-section">
+                <h2>Bienvenue sur MonWiki</h2>
+                <p>MonWiki est votre base de connaissances personnelle. Créez, organisez et partagez vos connaissances dans un format wiki facile à naviguer.</p>
+            </section>
+
+            <section class="featured-articles">
+                <h3>Articles en Vedette</h3>
+                <div class="article-grid" id="featuredArticles">
+                    <!-- Les articles en vedette seront chargés ici par JavaScript -->
+                </div>
+            </section>
+
+            <section class="recent-articles">
+                <h3>Articles Récents</h3>
+                <ul id="recentArticles">
+                    <!-- Les articles récents seront chargés ici par JavaScript -->
+                </ul>
+            </section>
+
+            <section class="all-articles-section">
+                <h3>Tous les Articles</h3>
+                <div class="article-filter">
+                    <input type="text" id="articleFilter" placeholder="Filtrer les articles...">
+                </div>
+                <div class="article-grid" id="allArticlesList">
+                    <!-- Tous les articles seront chargés ici par JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 MonWiki - Votre Base de Connaissances Personnelle</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

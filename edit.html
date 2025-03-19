@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Éditer un Article - MonWiki</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+      <div class="header-container">
+          <div class="logo">
+              <h1><a href="index.html">MonWiki</a></h1>
+          </div>
+          <div class="theme-toggle">
+              <button id="themeToggle"><i class="fas fa-moon"></i></button>
+          </div>
+      </div>
+  </header>
+
+  <main>
+      <div class="sidebar">
+          <nav>
+              <ul>
+                  <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                  <li><a href="#" id="randomArticle"><i class="fas fa-random"></i> Article Aléatoire</a></li>
+                  <li><a href="#" id="recentChanges"><i class="fas fa-history"></i> Modifications Récentes</a></li>
+                  <li><a href="#" id="createArticle"><i class="fas fa-plus-circle"></i> Créer un Article</a></li>
+                  <li><a href="#" id="allArticles"><i class="fas fa-list"></i> Tous les Articles</a></li>
+              </ul>
+          </nav>
+      </div>
+
+      <div class="content">
+          <div class="editor-container">
+              <h2 id="editorTitle">Créer un Nouvel Article</h2>
+              
+              <form id="articleForm">
+                  <div class="form-group">
+                      <label for="articleTitle">Titre de l'article</label>
+                      <input type="text" id="articleTitle" required>
+                  </div>
+                  
+                  <div class="editor-layout">
+                      <div class="editor-main">
+                          <div class="form-group">
+                              <label for="articleContent">Contenu de l'article</label>
+                              <div class="editor-toolbar">
+                                  <button type="button" data-format="h2"><i class="fas fa-heading"></i> Titre</button>
+                                  <button type="button" data-format="h3"><i class="fas fa-heading fa-xs"></i> Sous-titre</button>
+                                  <button type="button" data-format="b"><i class="fas fa-bold"></i> Gras</button>
+                                  <button type="button" data-format="i"><i class="fas fa-italic"></i> Italique</button>
+                                  <button type="button" data-format="link"><i class="fas fa-link"></i> Lien</button>
+                                  <button type="button" data-format="image"><i class="fas fa-image"></i> Image</button>
+                                  <button type="button" data-format="list"><i class="fas fa-list-ul"></i> Liste</button>
+                                  <button type="button" data-format="table"><i class="fas fa-table"></i> Tableau</button>
+                                  <button type="button" data-format="code"><i class="fas fa-code"></i> Code</button>
+                                  <button type="button" data-format="ref"><i class="fas fa-quote-right"></i> Référence</button>
+                              </div>
+                              <textarea id="articleContent" required></textarea>
+                              <div class="editor-preview">
+                                  <h3>Aperçu</h3>
+                                  <div id="previewContent" class="preview-area"></div>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <div class="editor-sidebar">
+                          <div class="form-group">
+                              <label for="articleImage">Image principale</label>
+                              <input type="text" id="articleImage" value="https://via.placeholder.com/300x150">
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="articleCategory">Catégorie</label>
+                              <input type="text" id="articleCategory" placeholder="Ex: Technologie, Science, Histoire...">
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="articleInfobox">Contenu de l'Infobox (HTML)</label>
+                              <textarea id="articleInfobox" placeholder="<h4>Informations</h4><p><strong>Date:</strong> 2025</p>"></textarea>
+                              <div class="infobox-preview">
+                                  <h4>Aperçu de l'Infobox</h4>
+                                  <div id="infoboxPreview" class="article-infobox"></div>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label>
+                                  <input type="checkbox" id="articleFeatured">
+                                  Article en Vedette
+                              </label>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="articleSlug">Nom du fichier (sans .html)</label>
+                              <input type="text" id="articleSlug" required>
+                              <small>Ce sera l'URL de votre article: wiki/nom-du-fichier.html</small>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <input type="hidden" id="articleId">
+                  <div class="form-actions">
+                      <button type="submit" id="saveArticleButton"><i class="fas fa-save"></i> Publier l'Article</button>
+                      <button type="button" id="previewArticleButton"><i class="fas fa-eye"></i> Prévisualiser</button>
+                      <button type="button" id="cancelEditButton"><i class="fas fa-times"></i> Annuler</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </main>
+
+  <footer>
+      <div class="footer-container">
+          <p>&copy; 2025 MonWiki - Votre Base de Connaissances Personnelle</p>
+      </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

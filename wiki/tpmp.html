@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titre de l'Article - MonWiki</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="../index.html">MonWiki</a></h1>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Rechercher des articles...">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            <div class="theme-toggle">
+                <button id="themeToggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="#" id="randomArticle"><i class="fas fa-random"></i> Article Aléatoire</a></li>
+                    <li><a href="#" id="recentChanges"><i class="fas fa-history"></i> Modifications Récentes</a></li>
+                    <li><a href="#" id="allArticles"><i class="fas fa-list"></i> Tous les Articles</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content article-page">
+            <article>
+                <div class="article-header">
+                    <h2>Titre de l'Article</h2>
+                    <div class="article-meta">
+                        <span><i class="far fa-calendar-alt"></i> Dernière mise à jour: 15/03/2025</span>
+                        <span class="article-category">Catégorie de l'Article</span>
+                    </div>
+                </div>
+                <div class="article-container">
+                    <div class="article-content">
+                        <!-- Image principale -->
+                        <img src="https://via.placeholder.com/800x400" alt="Image principale" class="main-image">
+                        
+                        <!-- Introduction -->
+                        <p>Ceci est un paragraphe d'introduction. Il donne un aperçu du contenu de l'article. Vous pouvez utiliser <strong>du texte en gras</strong> ou <em>en italique</em> pour mettre en évidence certains éléments.</p>
+                        
+                        <!-- Titre de section -->
+                        <h2>Titre de section</h2>
+                        <p>Voici un paragraphe standard. Les paragraphes sont séparés par des sauts de ligne. Vous pouvez inclure des <a href="#">liens hypertextes</a> vers d'autres pages ou sites web.</p>
+                        
+                        <!-- Sous-titre -->
+                        <h3>Sous-titre</h3>
+                        <p>Les sous-titres permettent d'organiser le contenu en sections plus petites. Ils sont utiles pour structurer l'information et faciliter la lecture.</p>
+                        
+                        <!-- Liste à puces -->
+                        <h3>Liste à puces</h3>
+                        <ul>
+                            <li>Premier élément de la liste</li>
+                            <li>Deuxième élément de la liste</li>
+                            <li>Troisième élément de la liste avec <strong>texte en gras</strong></li>
+                            <li>Quatrième élément avec <a href="#">un lien</a></li>
+                        </ul>
+                        
+                        <!-- Liste numérotée -->
+                        <h3>Liste numérotée</h3>
+                        <ol>
+                            <li>Première étape</li>
+                            <li>Deuxième étape</li>
+                            <li>Troisième étape</li>
+                            <li>Quatrième étape</li>
+                        </ol>
+                        
+                        <!-- Tableau -->
+                        <h3>Tableau</h3>
+                        <table class="article-table">
+                            <thead>
+                                <tr>
+                                    <th>En-tête 1</th>
+                                    <th>En-tête 2</th>
+                                    <th>En-tête 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Cellule 1</td>
+                                    <td>Cellule 2</td>
+                                    <td>Cellule 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Cellule 4</td>
+                                    <td>Cellule 5</td>
+                                    <td>Cellule 6</td>
+                                </tr>
+                                <tr>
+                                    <td>Cellule 7</td>
+                                    <td>Cellule 8</td>
+                                    <td>Cellule 9</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <!-- Image dans le contenu -->
+                        <h3>Image dans le contenu</h3>
+                        <p>Vous pouvez insérer des images à n'importe quel endroit dans le contenu de l'article.</p>
+                        <img src="https://via.placeholder.com/600x300" alt="Image dans le contenu" class="content-image">
+                        <p>Ajoutez une légende sous l'image si nécessaire.</p>
+                        
+                        <!-- Citation -->
+                        <h3>Citation</h3>
+                        <blockquote>
+                            <p>Ceci est une citation. Utilisez-la pour mettre en évidence des extraits de texte importants ou des citations d'autres sources.</p>
+                            <footer>— Auteur de la citation</footer>
+                        </blockquote>
+                        
+                        <!-- Code -->
+                        <h3>Bloc de code</h3>
+                        <p>Vous pouvez inclure des blocs de code formatés pour présenter du code informatique :</p>
+                        <pre><code>function exemple() {
+  console.log("Ceci est un exemple de code");
+  return true;
+}</code></pre>
+                        
+                        <!-- Code inline -->
+                        <p>Vous pouvez également utiliser du <code>code inline</code> au milieu d'un paragraphe.</p>
+                        
+                        <!-- Note de bas de page -->
+                        <h3>Notes et références</h3>
+                        <p>Vous pouvez ajouter des références à votre texte<sup><a href="#ref1">[1]</a></sup> pour citer vos sources.</p>
+                        <p>Une autre référence peut être ajoutée ici<sup><a href="#ref2">[2]</a></sup>.</p>
+                        
+                        <!-- Section de références -->
+                        <h3>Références</h3>
+                        <ol class="references">
+                            <li id="ref1">Auteur, A. (2025). <em>Titre de la source</em>. Éditeur. <a href="#">https://exemple.com</a></li>
+                            <li id="ref2">Auteur, B. (2024). <em>Autre source</em>. Éditeur. <a href="#">https://exemple2.com</a></li>
+                        </ol>
+                        
+                        <!-- Liens internes -->
+                        <h3>Liens vers d'autres articles</h3>
+                        <p>Vous pouvez créer des liens vers d'autres articles de votre wiki :</p>
+                        <ul>
+                            <li><a href="autre-article.html">Lien vers un autre article</a></li>
+                            <li><a href="categorie/sous-article.html">Lien vers un article dans une sous-catégorie</a></li>
+                        </ul>
+                        
+                        <!-- Avertissement ou note -->
+                        <div class="article-note">
+                            <h4><i class="fas fa-exclamation-circle"></i> Note importante</h4>
+                            <p>Ceci est une note ou un avertissement que vous souhaitez mettre en évidence pour les lecteurs.</p>
+                        </div>
+                        
+                        <!-- Vidéo ou contenu multimédia -->
+                        <h3>Contenu multimédia</h3>
+                        <div class="media-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p>Légende de la vidéo ou du contenu multimédia.</p>
+                        
+                        <!-- Accordéon (contenu dépliable) -->
+                        <h3>Contenu dépliable</h3>
+                        <details class="article-accordion">
+                            <summary>Cliquez pour afficher plus d'informations</summary>
+                            <div class="accordion-content">
+                                <p>Ce contenu est masqué par défaut et s'affiche lorsque l'utilisateur clique sur le titre.</p>
+                                <p>Vous pouvez inclure n'importe quel type de contenu ici, y compris des listes, des images, etc.</p>
+                            </div>
+                        </details>
+                        
+                        <!-- Définition -->
+                        <h3>Définitions</h3>
+                        <dl class="definition-list">
+                            <dt>Terme à définir</dt>
+                            <dd>Définition du terme. Vous pouvez inclure autant de détails que nécessaire.</dd>
+                            
+                            <dt>Autre terme</dt>
+                            <dd>Définition de l'autre terme. Les définitions sont utiles pour expliquer des concepts techniques.</dd>
+                        </dl>
+                    </div>
+                    
+                    <!-- Infobox -->
+                    <div class="article-infobox">
+                        <h4>Titre de l'Infobox</h4>
+                        <img src="https://via.placeholder.com/300x200" alt="Image de l'infobox">
+                        <p><strong>Type:</strong> Information</p>
+                        <p><strong>Créé en:</strong> 2025</p>
+                        <p><strong>Créateur:</strong> Nom du créateur</p>
+                        <p><strong>Caractéristique 1:</strong> Valeur 1</p>
+                        <p><strong>Caractéristique 2:</strong> Valeur 2</p>
+                        <p><strong>Caractéristique 3:</strong> Valeur 3</p>
+                        <p><strong>Site web:</strong> <a href="#">https://exemple.com</a></p>
+                    </div>
+                </div>
+                
+                <!-- Section "Voir aussi" -->
+                <div class="see-also">
+                    <h3>Voir aussi</h3>
+                    <ul>
+                        <li><a href="article-connexe-1.html">Article connexe 1</a></li>
+                        <li><a href="article-connexe-2.html">Article connexe 2</a></li>
+                        <li><a href="article-connexe-3.html">Article connexe 3</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Catégories -->
+                <div class="article-categories">
+                    <h4>Catégories:</h4>
+                    <ul>
+                        <li><a href="../categories/categorie1.html">Catégorie 1</a></li>
+                        <li><a href="../categories/categorie2.html">Catégorie 2</a></li>
+                        <li><a href="../categories/categorie3.html">Catégorie 3</a></li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 MonWiki - Votre Base de Connaissances Personnelle</p>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>
+
