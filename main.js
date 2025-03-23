@@ -17,28 +17,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ici, nous allons simuler avec une liste statique
     const articles = [
       {
-        title: "Introduction au HTML",
-        slug: "introduction-html",
-        lastUpdated: "2025-03-15",
+        title: "La belle et la bête (Indochine) - 2024",
+        slug: "labelleetlabete-indochine",
+        lastUpdated: "2025-03-23",
         featured: true,
-        image: "https://via.placeholder.com/300x150?text=HTML",
-        category: "Développement Web",
+        image: "https://m.media-amazon.com/images/I/71e1fmEil0L._UF1000,1000_QL80_.jpg",
+        category: "Indochine",
       },
       {
-        title: "Les bases du CSS",
-        slug: "bases-css",
-        lastUpdated: "2025-03-14",
+        title: "Ciel (GIMS) - 2024",
+        slug: "ciel-gims",
+        lastUpdated: "2025-03-23",
         featured: true,
-        image: "https://via.placeholder.com/300x150?text=CSS",
-        category: "Développement Web",
-      },
-      {
-        title: "JavaScript pour débutants",
-        slug: "javascript-debutants",
-        lastUpdated: "2025-03-10",
-        featured: false,
-        image: "https://via.placeholder.com/300x150?text=JavaScript",
-        category: "Développement Web",
+        image: "https://i.ytimg.com/vi/QS0A-CjRdAE/maxresdefault.jpg",
+        category: "GIMS",
       },
     ]
   
@@ -85,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
           searchResults.innerHTML = ""
           filteredArticles.forEach((article) => {
             const resultItem = document.createElement("a")
-            resultItem.href = `wiki/${article.slug}.html`
+            resultItem.href = `paroles/${article.slug}.html`
             resultItem.textContent = article.title
             searchResults.appendChild(resultItem)
           })
@@ -113,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         articleCard.innerHTML = `
                   <img src="${article.image}" alt="${article.title}">
                   <div class="article-card-content">
-                      <h4><a href="wiki/${article.slug}.html">${article.title}</a></h4>
+                      <h4><a href="paroles/${article.slug}.html">${article.title}</a></h4>
                       <small>Dernière mise à jour: ${formatDate(article.lastUpdated)}</small>
                       ${article.category ? `<span class="article-category">${article.category}</span>` : ""}
                   </div>
@@ -130,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
       recent.forEach((article) => {
         const listItem = document.createElement("li")
         listItem.innerHTML = `
-                  <a href="wiki/${article.slug}.html">${article.title}</a>
+                  <a href="paroles/${article.slug}.html">${article.title}</a>
                   <span class="article-date">Dernière mise à jour: ${formatDate(article.lastUpdated)}</span>
                   ${article.category ? `<span class="article-category">${article.category}</span>` : ""}
               `
@@ -172,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
         articleCard.innerHTML = `
                   <img src="${article.image}" alt="${article.title}">
                   <div class="article-card-content">
-                      <h4><a href="wiki/${article.slug}.html">${article.title}</a></h4>
+                      <h4><a href="paroles/${article.slug}.html">${article.title}</a></h4>
                       <small>Dernière mise à jour: ${formatDate(article.lastUpdated)}</small>
                       ${article.category ? `<span class="article-category">${article.category}</span>` : ""}
                   </div>
@@ -188,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (articles.length === 0) return
   
         const randomIndex = Math.floor(Math.random() * articles.length)
-        window.location.href = `wiki/${articles[randomIndex].slug}.html`
+        window.location.href = `paroles/${articles[randomIndex].slug}.html`
       })
     }
   
